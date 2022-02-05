@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VOV-WP-N7W">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19529"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rover Table View Controller-->
+        <scene sceneID="57G-5O-Sqq">
+            <objects>
+                <tableViewController id="VOV-WP-N7W" customClass="RoverTableViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gaa-o9-EkC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="2Cc-oR-Wrh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="roverCell" rowHeight="336" id="PR5-QX-Vjo" customClass="RoverTableViewCell" customModule="NASA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="336"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PR5-QX-Vjo" id="Mix-H5-TXQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover Camera Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY0-1H-jPg">
+                                            <rect key="frame" x="20" y="11" width="374" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31.5" id="F7V-hj-62c"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-vu-9Tg">
+                                            <rect key="frame" x="97" y="90" width="220" height="220"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="vBj-vu-9Tg" secondAttribute="height" multiplier="1:1" id="Vsx-ff-BaV"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MY0-1H-jPg" firstAttribute="leading" secondItem="Mix-H5-TXQ" secondAttribute="leadingMargin" id="AlQ-Qs-0IS"/>
+                                        <constraint firstItem="vBj-vu-9Tg" firstAttribute="centerX" secondItem="Mix-H5-TXQ" secondAttribute="centerX" id="Flv-dh-wQp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vBj-vu-9Tg" secondAttribute="bottom" constant="15" id="SWG-Q1-9Di"/>
+                                        <constraint firstItem="MY0-1H-jPg" firstAttribute="top" secondItem="Mix-H5-TXQ" secondAttribute="topMargin" id="VUu-6N-h5g"/>
+                                        <constraint firstItem="vBj-vu-9Tg" firstAttribute="leading" secondItem="Mix-H5-TXQ" secondAttribute="leadingMargin" constant="77" id="bKD-HY-slo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MY0-1H-jPg" secondAttribute="trailing" id="hGa-m4-Fqt"/>
+                                        <constraint firstItem="vBj-vu-9Tg" firstAttribute="top" secondItem="MY0-1H-jPg" secondAttribute="bottom" constant="25" id="viZ-aO-Gyk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="roverCameraNameTextLabel" destination="MY0-1H-jPg" id="vBB-S0-aO8"/>
+                                    <outlet property="roverImageview" destination="vBj-vu-9Tg" id="XyC-3u-T2D"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VOV-WP-N7W" id="luX-cE-QNX"/>
+                            <outlet property="delegate" destination="VOV-WP-N7W" id="3vY-zk-d3f"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="roverSearchBar" destination="2Cc-oR-Wrh" id="eH3-uS-jcN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uno-9d-1Za" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.24637681159425" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
